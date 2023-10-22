@@ -7,6 +7,7 @@ defmodule MyHealthAppServerWeb.Router do
 
   scope "/api", MyHealthAppServerWeb do
     pipe_through :api
+    resources "/body_comp_entries", BodyCompEntryController, except: [:new, :edit]
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
