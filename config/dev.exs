@@ -2,10 +2,10 @@ import Config
 
 # Configure your database
 config :my_health_app_server, MyHealthAppServer.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "tysmith",
+  password: "",
   hostname: "localhost",
-  database: "my_health_app_server_dev",
+  database: "my_health_app",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
