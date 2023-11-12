@@ -10,8 +10,8 @@ defmodule MyHealthAppServer.BodyComp.BodyCompEntry do
   end
 
   @doc false
-  def changeset(body_comp_entry, attrs) do
-    body_comp_entry
+  def changeset(entry, attrs) do
+    entry
     |> cast(attrs, [:entry_date, :weight_g])
     |> validate_required([:entry_date, :weight_g])
   end
