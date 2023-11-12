@@ -18,6 +18,9 @@ defmodule MyHealthAppServer.BodyComp do
 
   """
   def list_body_comp_entries do
-    Repo.all(BodyCompEntry)
+    query = from BodyCompEntry,
+      order_by: [desc: :entry_date]
+
+    Repo.all(query)
   end
 end
