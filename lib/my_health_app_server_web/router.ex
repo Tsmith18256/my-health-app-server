@@ -5,7 +5,7 @@ defmodule MyHealthAppServerWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", MyHealthAppServerWeb do
+  scope "/v1", MyHealthAppServerWeb do
     pipe_through :api
 
     resources "/bodycompentries", BodyCompEntryController, except: [:edit, :new]
