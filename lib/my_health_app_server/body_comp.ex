@@ -17,9 +17,14 @@ defmodule MyHealthAppServer.BodyComp do
       [%BodyCompEntry{}, ...]
 
   """
-  def list_body_comp_entries do
+  def list_body_comp_entries(params) do
+    limit = Map.get(params, "limit", 100)
+    offset = Map.get(params, "offset", 0)
+
     query = from BodyCompEntry,
-      order_by: [desc: :entry_date]
+      order_by: [desc: :entry_date],
+      limit: ^limit,
+      offset: ^offset
 
     Repo.all(query)
   end

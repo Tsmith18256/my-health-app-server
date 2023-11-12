@@ -4,8 +4,8 @@ defmodule MyHealthAppServerWeb.BodyCompEntryController do
   alias MyHealthAppServer.BodyComp
   alias MyHealthAppServer.BodyComp.BodyCompEntry
 
-  def index(conn, _params) do
-    entries = BodyComp.list_body_comp_entries()
+  def index(conn, params) do
+    entries = BodyComp.list_body_comp_entries(params)
 
     render(conn, :index, body_comp_entries: entries)
   end
