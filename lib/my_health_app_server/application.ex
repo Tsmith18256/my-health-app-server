@@ -12,8 +12,6 @@ defmodule MyHealthAppServer.Application do
       MyHealthAppServer.Repo,
       {DNSCluster, query: Application.get_env(:my_health_app_server, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: MyHealthAppServer.PubSub},
-      # Start the Finch HTTP client for sending emails
-      {Finch, name: MyHealthAppServer.Finch},
       # Start a worker by calling: MyHealthAppServer.Worker.start_link(arg)
       # {MyHealthAppServer.Worker, arg},
       # Start to serve requests, typically the last entry

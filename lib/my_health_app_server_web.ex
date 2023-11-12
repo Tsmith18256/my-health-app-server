@@ -42,7 +42,6 @@ defmodule MyHealthAppServerWeb do
         layouts: [html: MyHealthAppServerWeb.Layouts]
 
       import Plug.Conn
-      import MyHealthAppServerWeb.Gettext
 
       unquote(verified_routes())
     end

@@ -20,16 +20,7 @@ config :my_health_app_server, MyHealthAppServerWeb.Endpoint,
     layout: false
   ],
   pubsub_server: MyHealthAppServer.PubSub,
-  live_view: [signing_salt: "XeWIrEaS"]
-
-# Configures the mailer
-#
-# By default it uses the "Local" adapter which stores the emails
-# locally. You can see the emails in your browser, at "/dev/mailbox".
-#
-# For production it's recommended to configure a different adapter
-# at the `config/runtime.exs`.
-config :my_health_app_server, MyHealthAppServer.Mailer, adapter: Swoosh.Adapters.Local
+  live_view: [signing_salt: "UZhDyhDO"]
 
 # Configures Elixir's Logger
 config :logger, :console,

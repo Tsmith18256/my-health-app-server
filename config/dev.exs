@@ -2,10 +2,10 @@ import Config
 
 # Configure your database
 config :my_health_app_server, MyHealthAppServer.Repo,
-  username: "tysmith",
-  password: "",
+  username: "postgres",
+  password: "postgres",
   hostname: "localhost",
-  database: "my_health_app",
+  database: "my_health_app_server_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -23,7 +23,7 @@ config :my_health_app_server, MyHealthAppServerWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "sHG6QeBSa2ebeicqs9atC3K1TAkkkwRyhcK2VARb06kuwpTFeXFMwAsexe7dFZ6r",
+  secret_key_base: "2BXvbmye/PVZduoW4jz98xz2gElbD1fsXlDTyCLwsmT2ZN4Wg3YQWwBvnULQTdQv",
   watchers: []
 
 # ## SSL Support
@@ -61,6 +61,3 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
-
-# Disable swoosh api client as it is only required for production adapters.
-config :swoosh, :api_client, false
