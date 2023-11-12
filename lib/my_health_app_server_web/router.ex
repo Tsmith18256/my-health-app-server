@@ -7,5 +7,7 @@ defmodule MyHealthAppServerWeb.Router do
 
   scope "/api", MyHealthAppServerWeb do
     pipe_through :api
+
+    resources "/bodycompentries", BodyCompEntryController, except: [:edit, :new]
   end
 end
