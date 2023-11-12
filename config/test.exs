@@ -17,14 +17,8 @@ config :my_health_app_server, MyHealthAppServer.Repo,
 # you can enable the server option below.
 config :my_health_app_server, MyHealthAppServerWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "ngVbC5X6lKWXrHS4SihEulYYYUxvHkZ1EpI8aW+Dl0mtH7TvrOOcUpLiAqs6byV/",
+  secret_key_base: "MW0S9u8naEKK6xazVy1eBTDVzVaEEyIByJrOAz5Fhq8N8nOcKd6KRXoe4ewLvRo8",
   server: false
-
-# In test we don't send emails.
-config :my_health_app_server, MyHealthAppServer.Mailer, adapter: Swoosh.Adapters.Test
-
-# Disable swoosh api client as it is only required for production adapters.
-config :swoosh, :api_client, false
 
 # Print only warnings and errors during test
 config :logger, level: :warning
