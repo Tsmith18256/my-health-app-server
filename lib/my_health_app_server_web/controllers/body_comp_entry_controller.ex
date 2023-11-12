@@ -4,6 +4,8 @@ defmodule MyHealthAppServerWeb.BodyCompEntryController do
   alias MyHealthAppServer.BodyComp
   alias MyHealthAppServer.BodyComp.BodyCompEntry
 
+  action_fallback MyHealthAppServerWeb.FallbackController
+
   def index(conn, params) do
     entries = BodyComp.list_body_comp_entries(params)
 
