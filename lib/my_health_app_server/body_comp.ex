@@ -28,4 +28,22 @@ defmodule MyHealthAppServer.BodyComp do
 
     Repo.all(query)
   end
+
+  @doc """
+  Gets a single body_comp_entry.
+
+  Raises `Ecto.NoResultsError` if the Body comp entry does not exist.
+
+  ## Examples
+
+      iex> get_body_comp_entry!(123)
+      %BodyCompEntry{}
+
+      iex> get_body_comp_entry!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_body_comp_entry!(id) do
+    Repo.get!(BodyCompEntry, id)
+  end
 end

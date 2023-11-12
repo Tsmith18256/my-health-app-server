@@ -12,8 +12,10 @@ defmodule MyHealthAppServerWeb.BodyCompEntryController do
     render(conn, :index, body_comp_entries: entries)
   end
 
-  def show(conn, _params) do
-    send_resp(conn, 501, "")
+  def show(conn, %{"id" => id}) do
+    entry = BodyComp.get_body_comp_entry!(id)
+
+    render(conn, :show, body_comp_entry: entry)
   end
 
   def create(conn, _params) do
