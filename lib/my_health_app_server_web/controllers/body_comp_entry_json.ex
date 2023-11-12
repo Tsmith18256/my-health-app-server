@@ -18,8 +18,8 @@ defmodule MyHealthAppServerWeb.BodyCompEntryJSON do
   defp data(%BodyCompEntry{} = entry) do
     %{
       id: entry.id,
-      entry_date: entry.entry_date,
-      weight_g: entry.weight_g
+      entryDate: entry.entry_date,
+      weightG: entry.weight_g
     }
   end
 end

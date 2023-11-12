@@ -46,4 +46,22 @@ defmodule MyHealthAppServer.BodyComp do
   def get_body_comp_entry!(id) do
     Repo.get!(BodyCompEntry, id)
   end
+
+  @doc """
+  Creates a body_comp_entry.
+
+  ## Examples
+
+      iex> create_body_comp_entry(%{field: value})
+      {:ok, %BodyCompEntry{}}
+
+      iex> create_body_comp_entry(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_body_comp_entry(attrs \\ %{}) do
+    %BodyCompEntry{}
+    |> BodyCompEntry.changeset(attrs)
+    |> Repo.insert()
+  end
 end
