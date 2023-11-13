@@ -33,8 +33,12 @@ defmodule MyHealthAppServerWeb.BodyCompEntryController do
     send_resp(conn, 501, "")
   end
 
-  def delete(conn, _params) do
-    send_resp(conn, 501, "")
+  def delete(conn, %{"id" => id}) do
+    entry = BodyComp.get_body_comp_entry!(id)
+
+    with {:ok, %BodyCompEntry{}} <- BodyComp.delete_body_comp_entry(entry) do
+      send_resp(conn, :no_content, "")
+    end
   end
 
   defp convert_entry(%{"entryDate" => entry_date, "weightG" => weight_g}) do

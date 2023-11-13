@@ -64,4 +64,20 @@ defmodule MyHealthAppServer.BodyComp do
     |> BodyCompEntry.changeset(attrs)
     |> Repo.insert()
   end
+
+  @doc """
+  Deletes a body_comp_entry.
+
+  ## Examples
+
+      iex> delete_body_comp_entry(body_comp_entry)
+      {:ok, %BodyCompEntry{}}
+
+      iex> delete_body_comp_entry(body_comp_entry)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_body_comp_entry(%BodyCompEntry{} = body_comp_entry) do
+    Repo.delete(body_comp_entry)
+  end
 end
