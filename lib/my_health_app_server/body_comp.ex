@@ -66,6 +66,27 @@ defmodule MyHealthAppServer.BodyComp do
   end
 
   @doc """
+  Updates a body_comp_entry.
+
+  ## Examples
+
+      iex> update_body_comp_entry(body_comp_entry, %{field: new_value})
+      {:ok, %BodyCompEntry{}}
+
+      iex> update_body_comp_entry(body_comp_entry, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_body_comp_entry(%BodyCompEntry{} = body_comp_entry, attrs) do
+    IO.inspect(body_comp_entry)
+    IO.inspect(attrs)
+
+    body_comp_entry
+    |> BodyCompEntry.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
   Deletes a body_comp_entry.
 
   ## Examples
@@ -79,5 +100,18 @@ defmodule MyHealthAppServer.BodyComp do
   """
   def delete_body_comp_entry(%BodyCompEntry{} = body_comp_entry) do
     Repo.delete(body_comp_entry)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking body_comp_entry changes.
+
+  ## Examples
+
+      iex> change_body_comp_entry(body_comp_entry)
+      %Ecto.Changeset{data: %BodyCompEntry{}}
+
+  """
+  def change_body_comp_entry(%BodyCompEntry{} = body_comp_entry, attrs \\ %{}) do
+    BodyCompEntry.changeset(body_comp_entry, attrs)
   end
 end
