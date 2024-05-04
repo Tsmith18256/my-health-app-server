@@ -29,8 +29,17 @@ defmodule MyHealthAppServerWeb.BodyCompEntryController do
     end
   end
 
-  def update(conn, _params) do
-    send_resp(conn, 501, "")
+  def update(%Plug.Conn{method: method} = conn, %{"id" => id, "entry" => entry_params}) do
+    entry = BodyComp.get_body_comp_entry!(id)
+    attrs = convert_entry(entry_params)
+
+    case method do
+      "PUT" -> with {:ok, %BodyCompEntry{} = entry} <- BodyComp.update_body_comp_entry(entry, attrs) do
+        render(conn, :show, body_comp_entry: entry)
+      end
+
+      "PATCH" -> send_resp(conn, :not_implemented, "")
+    end
   end
 
   def delete(conn, %{"id" => id}) do
